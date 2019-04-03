@@ -56,17 +56,7 @@ public class WordPressSignInPage extends BasePage {
         title = getTitle() ;
     
         Assert.assertTrue(title.equalsIgnoreCase(expectedTitle));
-        
-     /*   
-        
-         expectedCondition = ExpectedConditions.presenceOfElementLocated(wordPressTitleSelector);
-        System.out.println("Expected condition is " + expectedCondition.toString());
-        element = webWait.until(expectedCondition);
-        if (element == null) {
-           throw (new IllegalStateException("Login page element not found"));
-        }
-       
-*/       
+
 
     }
     
