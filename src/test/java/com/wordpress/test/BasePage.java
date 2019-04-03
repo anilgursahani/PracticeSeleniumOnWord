@@ -95,25 +95,7 @@ public class BasePage {
  
         
   
-   //      System.out.println("Log out element is " + logoutElement);
-   //     wait.until(ExpectedConditions.visibilityOf(logoutElement));
-  //       logoutElement.click();
-  //       numElements = elements.size() ;
-  //       System.out.println("Number of elements are " + numElements);
-         
-         
-         
-  //      wait.until(ExpectedConditions.visibilityOfElementLocated(submenuSelector));
-      
-      /*
-       Actions actions = new Actions(driver);
-WebElement menu = driver.findElement(By.xpath("//*[@id='menu-links']/a/div[3]"));
-actions.moveToElement(menu);
 
-WebElement subMenu = driver.findElement(By.xpath("//*[@id='menu-links']/ul/li[2]/a"));
-actions.moveToElement(subMenu);
-actions.click().build().perform();
-     */
     
          
     }
