@@ -92,11 +92,6 @@ public class BasePage {
                 
         actions.moveToElement(logoutElement);
         actions.click().build().perform();
- 
-        
-  
-
-    
-         
+      
     }
 }
