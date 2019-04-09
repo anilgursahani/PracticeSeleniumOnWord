@@ -37,19 +37,14 @@ private final By closeControl = By.className("customize-controls-close");
     {
        String username ;
         username = getDriver().findElement(usernameSelector).getText();
-        return username ;
-        
-        
+        return username ;       
     }
     
     public void CustomiseYourSite()
         {
             getDriver().findElement(customizeYourSizeSelector).click();
             wait.until(ExpectedConditions.presenceOfElementLocated(closeControl));
-            getDriver().findElement(closeControl).click();
-          
-            
-
+            getDriver().findElement(closeControl).click();        
         }
     
 }
