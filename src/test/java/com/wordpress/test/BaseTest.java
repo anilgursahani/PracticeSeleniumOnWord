@@ -8,13 +8,14 @@ package com.wordpress.test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.BeforeSuite;
 import java.util.Map;
 import java.util.Set;
 import com.wordpress.utilities.GetProperties;
 import java.util.Iterator;
+import org.testng.Reporter;
 
 /**
  *
@@ -22,11 +23,11 @@ import java.util.Iterator;
  */
 public class BaseTest {
     
-    protected ChromeDriver driver;
+    protected static ChromeDriver driver;
     protected String wordPressURL ;
     
-    @BeforeClass    
-    public void BeforeClass() {
+    @BeforeTest    
+    public void BeforeTest() {
         
       
         WebDriverManager.chromedriver().setup();
@@ -38,7 +39,8 @@ public class BaseTest {
         Iterator iterator ;
         Object entrySetObj ;
         
-        
+        Reporter.log("In Before Test");
+        System.out.println("Before Test");
         
 
         //Create driver object for Chrome
@@ -55,22 +57,29 @@ public class BaseTest {
             System.out.println(entrySetObj);
         }
         getProperties = new GetProperties();
-        wordPressURL = getProperties.getURL();
+        wordPressURL = getProperties.getURL();  
+        navigateToWordPressURL();
        
        
         
     }
     
-    @AfterClass
+    @AfterTest
     
-    public void AfterClass() {
-       System.out.println("After class");
+    public void AfterTest() {
+        Reporter.log("In After Test");
+        System.out.println("After Test");
        driver.quit();
     }
     
     public void navigateToWordPressURL()
     {
         driver.get(wordPressURL);
-    }
+        
+    } 
     
+    public ChromeDriver getDriver()
+    {
+        return driver ;
+    }
 }

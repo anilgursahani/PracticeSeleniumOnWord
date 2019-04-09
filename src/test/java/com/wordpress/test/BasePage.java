@@ -26,9 +26,11 @@ import org.testng.Reporter;
 public class BasePage {
 
     protected ChromeDriver chromeDriver;
+    protected WebDriverWait  wait;
 
     public BasePage(ChromeDriver driver) {
         chromeDriver = driver;
+        wait  = new WebDriverWait(chromeDriver, 5);
     }
 
     public String getTitle() {
@@ -56,7 +58,6 @@ public class BasePage {
         Actions actions  ;
         WebElement hoverElement ;
       
-        WebDriverWait wait ;
         String aText ;
         System.out.println("HoverOverAndSelectElement");
         hoverElement = chromeDriver.findElement(hoverSelector);
@@ -66,10 +67,7 @@ public class BasePage {
         List<WebElement> elements ;
         int numElements ;
         WebElement logoutElement ;
-        
-        
-        
-        wait = new WebDriverWait(chromeDriver,2);  
+       
          actions = new Actions(chromeDriver);
          actions.moveToElement(hoverElement);
          mouseOverHover = actions.build();
@@ -92,11 +90,6 @@ public class BasePage {
                 
         actions.moveToElement(logoutElement);
         actions.click().build().perform();
- 
-        
-  
-
-    
-         
+      
     }
 }

@@ -11,7 +11,10 @@ and open the template in the editor.
 <suite name="Suite1" verbose="1" >
     <test name="Test1" >
         <classes>
-            <class name="com.wordpress.test.WordpressLoginTests" />
+            <class name="com.wordpress.test.WordpressLoginTests"/>
+            <class name="com.wordpress.test.DashboardPageTests"/>
+            <class name = "com.wordpress.test.ExperimentTest"/>
+            <!--class name="com.wordpress.test.LogoutTest"/-->
         </classes>
     </test>
  

@@ -45,18 +45,14 @@ public class WordPressSignInPage extends BasePage {
 
     public WordPressSignInPage(ChromeDriver chromeDriver) {
           super(chromeDriver);
-        ExpectedCondition expectedCondition ;
-         WebDriverWait webWait;
+      
+        
          String title ;
          String expectedTitle = "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress";
          
-         Object element ;
-         
-        webWait = new WebDriverWait(chromeDriver, 7);
+         Object element ;    
         title = getTitle() ;
-    
         Assert.assertTrue(title.equalsIgnoreCase(expectedTitle));
-
 
     }
     
@@ -68,27 +64,46 @@ public class WordPressSignInPage extends BasePage {
         chromeDriver.findElement(userId).sendKeys(username);
         chromeDriver.findElement(passwordEl).sendKeys(password);
         chromeDriver.findElement(loginButton).click();
-
+        
     }
     
     public void Logout()
-    {
-        
+    {      
         System.out.println("Logout");
+        wait.until(ExpectedConditions.presenceOfElementLocated(avatarHover));
         HoverOverAndSelectElement(avatarHover, submenuSelector, LogoutSelect);
        
     }
     
     public String getLoginErrorText() 
     {
-        WebDriverWait wait ;
+        
         ChromeDriver driver ;
         String loginErrorText ;
         driver = getDriver();
-        wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.presenceOfElementLocated(loginErrorId));
-        loginErrorText = driver.findElement(loginErrorId).getText();
+        boolean result ;
+        ExpectedCondition expCond ;
+        expCond = ExpectedConditions.presenceOfElementLocated(loginErrorId);
+        if (wait.until(expCond) != null)
+       
+        {
+          loginErrorText = driver.findElement(loginErrorId).getText();
+        }
+        else
+        {
+            loginErrorText = null ;
+        }
         return loginErrorText ;
+       
         
+    }
+    
+    public Object WaitForDashboardPage()
+    {
+       ExpectedCondition expCond ;
+       expCond= ExpectedConditions.presenceOfElementLocated(avatarHover);
+      return (wait.until(expCond));
+     
+       
     }
 }

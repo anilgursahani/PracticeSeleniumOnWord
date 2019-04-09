@@ -19,6 +19,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WordPressDashboardPage extends BasePage {
 private final By  usernameSelector = By.cssSelector("span.display-name");
 private final By welcomePanelSelector = By.cssSelector("div.welcome-panel-content");
+private final By customizeYourSizeSelector = By.linkText("Customise Your Site");
+private final By closeControl = By.className("customize-controls-close");
 
 
     public WordPressDashboardPage(ChromeDriver driver) {
@@ -39,5 +41,15 @@ private final By welcomePanelSelector = By.cssSelector("div.welcome-panel-conten
         
         
     }
+    
+    public void CustomiseYourSite()
+        {
+            getDriver().findElement(customizeYourSizeSelector).click();
+            wait.until(ExpectedConditions.presenceOfElementLocated(closeControl));
+            getDriver().findElement(closeControl).click();
+          
+            
+
+        }
     
 }
