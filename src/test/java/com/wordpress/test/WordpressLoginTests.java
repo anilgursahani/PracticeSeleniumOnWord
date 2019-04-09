@@ -16,6 +16,7 @@ import org.testng.Assert;
 import static org.testng.Assert.assertEquals;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
 
 /**
  * Unit test for simple App.
@@ -28,6 +29,7 @@ public class WordpressLoginTests extends BaseTest {
      *
      */
     private WordPressSignInPage signInPage ;
+    
 
  @Test(priority = 1)
 
