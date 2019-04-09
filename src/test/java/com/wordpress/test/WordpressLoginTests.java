@@ -38,10 +38,13 @@ public class WordpressLoginTests extends BaseTest {
         WebDriverWait wait;
         String username ;
        WordPressDashboardPage dashboardPage ;
+       Object dashboardPageFound ;
       
        String expectedTitle = "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress";
        String expectedLogoutTitle =  "Log In ‹ Wordpress Demo Site at Demo.Center — WordPress";
         signInPage .Login("admin", "demo123");
+        dashboardPageFound = signInPage.WaitForDashboardPage();
+        Assert.assertNotNull(dashboardPageFound);
         dashboardPage = new WordPressDashboardPage(driver);
         username =  dashboardPage.getUsername();
         Assert.assertEquals(username, "admin");
@@ -57,7 +60,7 @@ public class WordpressLoginTests extends BaseTest {
     * 
     *   Function LoginTestUsingValidUsernameInvalidPassword
     */ 
- // @Test(priority = 2)
+  @Test(priority = 2)
     
     public void LoginTestUsingValidUsernameInvalidPassword()
     {
@@ -73,19 +76,15 @@ public class WordpressLoginTests extends BaseTest {
 
     @BeforeMethod()
     public void GotoWordpressPage() {
-         navigateToWordPressURL();
+       
         signInPage = new WordPressSignInPage(driver) ;
+       
 
     }
 
         //Navigate to a URL
     //quit the browser
     
-    @AfterMethod()
-    
-    public void CloseDriver() 
-    {
-  //      driver.close();
-    }
+   
     
 }
