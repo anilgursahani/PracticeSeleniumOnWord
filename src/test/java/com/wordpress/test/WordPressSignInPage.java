@@ -40,6 +40,7 @@ public class WordPressSignInPage extends BasePage {
  //   private final By avatarHover = By.cssSelector("li[class='menupop with-avatar']");
     private final By avatarHover = By.cssSelector("li#wp-admin-bar-my-account");
     private final By submenuSelector = By.cssSelector("ul#wp-admin-bar-user-actions");
+    
    
     
 

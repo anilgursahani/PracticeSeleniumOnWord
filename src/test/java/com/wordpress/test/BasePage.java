@@ -53,6 +53,20 @@ public class BasePage {
        
     }
     
+    public void HoverOverElement(By hoverSelector)
+    {
+        Actions actions  ;
+         WebElement hoverElement ;
+         Action mouseOverHover ;
+         
+         hoverElement = chromeDriver.findElement(hoverSelector);
+         actions = new Actions(chromeDriver);
+         actions.moveToElement(hoverElement);
+         mouseOverHover = actions.build();
+         mouseOverHover.perform();
+        
+    }
+    
     public void HoverOverAndSelectElement(By hoverSelector, By submenuSelector, By elementToSelectSelector)
     {
         Actions actions  ;
