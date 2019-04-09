@@ -12,9 +12,7 @@ and open the template in the editor.
     <test name="Test1" >
         <classes>
             <class name="com.wordpress.test.WordpressLoginTests"/>
-            <class name="com.wordpress.test.DashboardPageTests"/>
-            <class name = "com.wordpress.test.ExperimentTest"/>
-            <!--class name="com.wordpress.test.LogoutTest"/-->
+            <class name="com.wordpress.test.DashboardPageTests"/
         </classes>
     </test>
  
