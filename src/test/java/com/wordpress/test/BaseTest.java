@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.BeforeSuite;
 import java.util.Map;
 import java.util.Set;
 import com.wordpress.utilities.GetProperties;
